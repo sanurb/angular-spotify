@@ -1,0 +1,62 @@
+.play-list-header {
+  display: flex;
+  height: 18rem;
+  width: 100%;
+  padding-top: 3rem;
+  padding-bottom: 1rem;
+  background-color: #ffffff14;
+}
+
+.content-text {
+  padding: 1.5rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.cover {
+  position: relative;
+  width: 17rem;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.cover .cover-mock {
+  height: 100%;
+  width: 18rem;
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  align-items: center;
+  font-size: 5.5rem;
+  background: linear-gradient(125deg, #773de3 41%, #cffff1 100%);
+  box-shadow: var(--shadow-1);
+}
+
+.cover-mock > svg:nth-child(1) > path:nth-child(1) {
+  fill: white;
+}
+
+.content-text .title,
+.content-text .sub-title {
+  margin: 0;
+  font-weight: 600;
+}
+
+.content-text .title {
+  font-size: 6rem;
+  letter-spacing: -7px;
+}
+
+.content-text .small-text {
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 0.875rem;
+}
+
+.content-text .count-tracks {
+  font-weight: 300;
+  opacity: .7;
+  padding-left: .5rem;
+}
