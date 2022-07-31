@@ -12,9 +12,7 @@
 }
 
 .login-auth-page .login-auth-wrapper {
-  width: 25%;
   display: flex;
-  justify-content: center;
   flex-direction: column;
   align-items: center;
 }
@@ -66,6 +64,7 @@
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
+  padding-bottom: 12px;
 }
 
 .login-auth-page .login-auth-form .form-group input {
@@ -105,4 +104,17 @@
 
 input.ng-invalid.ng-touched {
   border: solid 2px red !important
+}
+
+.login-error{
+  color: #f44336;
+  background-color: #ffcfcc;
+  padding: 8px;
+  font-size: 0.875rem;
+  border: 1px solid #f44336;
+  border-left: 9px solid #f44336;
+  opacity: 0.83;
+  transition: opacity 0.6s;
+  margin-bottom: 15px;
+  border-radius: 6px;
 }

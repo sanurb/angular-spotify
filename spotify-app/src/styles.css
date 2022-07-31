@@ -52,3 +52,22 @@ button {
 button:disabled {
   opacity: .5;
 }
+
+/* width */
+::-webkit-scrollbar {
+    width: 14px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #181818;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(136, 136, 136, 0.589);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(85, 85, 85, 0.637);
+}

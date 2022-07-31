@@ -1,15 +1,18 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
-# Compiled output
-/dist
-/tmp
-/out-tsc
-/bazel-out
+### Angular ###
+## Angular ##
+# compiled output
+dist/
+tmp/
+app/**/*.js
+app/**/*.js.map
 
 # Node
 /node_modules
 npm-debug.log
 yarn-error.log
+bower_components/
 
 # IDEs and editors
 .idea/
@@ -35,7 +38,12 @@ yarn-error.log
 /coverage
 /libpeerconnection.log
 testem.log
+npm-debug.log
 /typings
+
+# e2e
+e2e/*.js
+e2e/*.map
 
 # System files
 .DS_Store

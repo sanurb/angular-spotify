@@ -1,4 +1,8 @@
 .section--generic {
+  --min-column-width: 270px;
+  --column-gap: 24px;
+  --row-gap: 12px;
+  --item-height: 64px;
   margin-bottom: 2rem;
 }
 
@@ -6,13 +10,11 @@
   display: grid;
   margin: 0;
   padding: 0;
-  gap: 1.15rem;
+  grid-gap: var(--row-gap) var(--column-gap);
+  grid-auto-rows: auto;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
 }
 
-.section--generic__player--zone .player--list.card-small {
-  grid-template-columns: repeat(5, 1fr);
-}
-
-.section--generic__player--zone .player--list.card-big {
-  grid-template-columns: repeat(6, minmax(100px, 1fr));
+.card-big > li:nth-last-child(-n+1) {
+  margin-bottom: 5rem;
 }

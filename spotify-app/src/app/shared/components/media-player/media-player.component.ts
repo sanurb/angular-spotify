@@ -17,24 +17,22 @@ export class MediaPlayerComponent implements OnInit {
     _id: 1,
   };
 
-  /* La lista acontinuacion se hace con el fin de escalabilidad
-  Por si se requiere crear mas de una subscription, simplemente las agregamos
+  /* La lista acontinuacion se hace con el fin de escalabilidad por si
+  se requiere crear mas de una subscription, simplemente las agregamos a la lista
   */
-  listObservers$:Array<Subscription> = []
+  listObservers$: Array<Subscription> = [];
 
   constructor(private multimediaService: MultimediaService) {}
 
   ngOnInit(): void {
-    const observe1$: Subscription = this.multimediaService.callback.subscribe(
-      (response: TrackModel) => {
-        console.log('Recibiendo cancion.....', response);
-      }
-    );
-
-    this.listObservers$ = [observe1$]
+    const observable1$ = this.multimediaService.myObservable1$
+    .subscribe({
+      next: (responseOk) => console.log('el agua llega perfecto!', responseOk),
+      error: (err) => console.log('se tapo la tuberia',err),
+    });
   }
 
   ngOnDestroy(): void {
-    this.listObservers$.forEach( u => u.unsubscribe())
+    this.listObservers$.forEach((u) => u.unsubscribe());
   }
 }

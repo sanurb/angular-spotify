@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import * as dataRaw from '@data/tracks.json';
 import { TrackModel } from '@core/models/tracks.model';
+import { TrackService } from '@modules/tracks/services/track.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-tracks-page',
@@ -8,13 +9,40 @@ import { TrackModel } from '@core/models/tracks.model';
   styleUrls: ['./tracks-page.component.css']
 })
 export class TracksPageComponent implements OnInit {
-  mockTracksList: Array<TrackModel> = [
-  ]
-  constructor() { }
+
+  tracksTrending: Array<TrackModel> = []
+  tracksRandom: Array<TrackModel> = []
+  listObservers$: Array<Subscription> = []
+
+  constructor(private trackService: TrackService) { }
 
   ngOnInit(): void {
-    const { data }:any = (dataRaw as any).default
-    this.mockTracksList = data;
+    this.loadDataAll()
+    this.loadDataRandom()
+  }
+
+  loadDataAll(): void {
+    // Se pueden trabajar como promesas tambien con .topromise() aunque esta deprecated
+    this.trackService.getAllTracks$()
+    .subscribe((response: TrackModel[]) => {
+      this.tracksTrending =  response
+    })
+  }
+
+  // ========= PROMESA ===========
+  // async loadDataAll(): Promise<any> {
+  //   this.tracksTrending = await this.trackService.getAllTracks$().toPromise()
+  // }
+
+  loadDataRandom(): void {
+    this.trackService.getAllRandom$()
+    .subscribe((response: TrackModel[]) => {
+      this.tracksRandom =  response
+    })
+  }
+
+  ngOnDestroy(): void {
+
   }
 
 }
