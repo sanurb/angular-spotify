@@ -125,7 +125,7 @@
 
 .media-player--wrapper .player-controls-inside .media-linetime .time-progress {
   background-color: var(--dark-color);
-  height: 2px;
+  height: 3px;
   width: 100%;
   left: 0;
   position: absolute;
@@ -135,9 +135,13 @@
 .media-player--wrapper .player-controls-inside .media-linetime .time-progress-live {
   background-color: var(--light-color);
   width: 0%;
-  height: 2px;
+  height: 3px;
   transition: all ease var(--animation-1);
   position: absolute;
+}
+
+.media-player--wrapper .player-controls-inside .media-linetime .time-progress:hover .time-progress-live{
+  background-color: var(--primary-color);
 }
 
 .media-player--wrapper .player-audio-inside {

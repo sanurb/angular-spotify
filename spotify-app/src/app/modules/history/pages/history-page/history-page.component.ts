@@ -17,7 +17,6 @@ export class HistoryPageComponent implements OnInit {
 
   receiveData(event: string): void {
     // TODO: recive el termino y solo se ejecuta cuando tiene minimo 3 letras
-    console.log('estoy en el padre🎁', event);
     this.listResults$ = this.searchService.searchTracks$(event)
   }
 
