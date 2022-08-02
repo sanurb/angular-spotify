@@ -3,8 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false,
-  api: 'http://localhost:3001/api/1.0'
+  production: true,
+  api: 'https://api-spotify-leifer.herokuapp.com/api/1.0'
 };
 
 /*
